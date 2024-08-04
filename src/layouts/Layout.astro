@@ -1,6 +1,8 @@
 ---
+// import "../styles/global.scss";
+import Header from "../components/Header.astro";
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -8,44 +10,99 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Shearing Shed</title>
+    <!-- <title>{title}</title> -->
+  </head>
+  <body>
+    <Header />
+    <slot />
+  </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
+<!-- <style lang="scss" is:global>
+  @use "@picocss/pico/scss/pico" with (
+    $enable-semantic-container: true,
+    $enable-classes: false,
+    $modules: (
+      "content/code": false,
+      "forms/input-color": false,
+      "forms/input-date": false,
+      "forms/input-file": false,
+      "forms/input-range": false,
+      "forms/input-search": false,
+      "components/accordion": false,
+      // "components/card": false,
+      "components/dropdown": false,
+      "components/loading": false,
+      "components/modal": false,
+      "components/nav": false,
+      "components/progress": false,
+      "components/tooltip": false,
+      "utilities/accessibility": false,
+      "utilities/reduce-motion": false,
+    )
+  );
+
+  :root {
+    user-select: none;
+  }
+
+  [data-theme="light"],
+  :root:not([data-theme="dark"]) {
+    --pico-color: #575279;
+    --pico-muted-color: #9893a5;
+    --pico-background-color: #faf4ed;
+    --pico-text-selection-color: rgb(87, 82, 121, 0.25);
+    --pico-primary: #286983;
+    --pico-primary-background: #ea9a97;
+    --pico-primary-underline: rgb(180, 99, 122, 0.5);
+    --pico-primary-hover: #907aa9;
+    --pico-primary-hover-background: #b4637a;
+    --pico-primary-focus: rgb(62, 143, 176, 0.5);
+    --pico-primary-inverse: #fffaf3;
+    --pico-card-background-color: #fffaf3;
+    --pico-h1-color: #d7827e;
+    --pico-h2-color: var(--pico-color);
+  }
+
+  @media only screen and (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+      --pico-color: #e0def4;
+      --pico-muted-color: #6e6a86;
+      --pico-background-color: #191724;
+      --pico-text-selection-color: rgb(110, 106, 134, 0.1875);
+      --pico-primary: #9ccfd8;
+      --pico-primary-background: #31748f;
+      --pico-primary-underline: rgb(234, 154, 151, 0.5);
+      --pico-primary-hover: #c4a7e7;
+      --pico-primary-hover-background: #eb6f92;
+      --pico-primary-focus: rgb(49, 116, 143, 0.375);
+      --pico-primary-inverse: #e0def4;
+      --pico-card-background-color: #1f1d2e;
+      --pico-h1-color: #ebbcba;
+      --pico-h2-color: var(--pico-color);
+    }
+  }
+
+  [data-theme="dark"] {
+    --pico-color: #e0def4;
+    --pico-muted-color: #6e6a86;
+    --pico-background-color: #191724;
+    --pico-text-selection-color: rgb(110, 106, 134, 0.1875);
+    --pico-primary: #9ccfd8;
+    --pico-primary-background: #31748f;
+    --pico-primary-underline: rgb(234, 154, 151, 0.5);
+    --pico-primary-hover: #c4a7e7;
+    --pico-primary-hover-background: #eb6f92;
+    --pico-primary-focus: rgb(49, 116, 143, 0.375);
+    --pico-primary-inverse: #e0def4;
+    --pico-card-background-color: #1f1d2e;
+    --pico-h1-color: #ebbcba;
+    --pico-h2-color: var(--pico-color);
+  }
+</style> -->

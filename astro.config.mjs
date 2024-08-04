@@ -1,4 +1,9 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
+// import installedIntegration from "@picocss/pico";
 
-// https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  integrations: [
+    // 1. Imported from an installed npm package
+    // installedIntegration(),
+  ],
+});
