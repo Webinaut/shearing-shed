@@ -1,9 +1,10 @@
 import { defineConfig } from "astro/config";
-// import installedIntegration from "@picocss/pico";
 
+import sitemap from "@astrojs/sitemap";
+
+// https://astro.build/config
 export default defineConfig({
-  integrations: [
-    // 1. Imported from an installed npm package
-    // installedIntegration(),
-  ],
+  trailingSlash: "always",
+  site: "https://shearingshedmansfield.com.au/",
+  integrations: [sitemap()],
 });

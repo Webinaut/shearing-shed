@@ -11,14 +11,16 @@
       "forms/input-range": false,
       "forms/input-search": false,
       "components/accordion": false,
-      "components/card": false,
-      "components/dropdown": false,
+      "components/card": true,
+      "components/dropdown": true,
       "components/loading": false,
       "components/modal": false,
-      "components/nav": false,
+      "components/nav": true,
       "components/progress": false,
       "components/tooltip": false,
+      "components/group": false,
       "utilities/accessibility": false,
       "utilities/reduce-motion": false,
     )
 );
+@use "style";

@@ -1,0 +1,132 @@
+---
+import "../styles/global.scss";
+// import "../styles/app.scss";
+import FrontPageHeader from "../components/FrontPageHeader.astro";
+import { Image } from "astro:assets";
+import Image1 from "../images/Shaving-Neck.jpg";
+import Image2 from "../images/Wallabies-Signed-Jersey.jpg";
+import Image3 from "../images/Vintage-Tools.jpg";
+import Image4 from "../images/Tools.jpg";
+import Image5 from "../images/Chair.jpg";
+import Image6 from "../images/Chairs-Rugby.jpg";
+import Footer from "../components/Footer.astro";
+const { pageTitle } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image" href="/cropped-shearing-icon-1.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" 
+    /> -->
+
+    <title>{pageTitle}</title>
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZBZX2G596"
+    ></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-RZBZX2G596");
+    </script> -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+  </head>
+  <body>
+    <FrontPageHeader />
+    <div class="splide" aria-label="Splide Basic HTML Example">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="splide__slide__container">
+              <Image src={Image1} alt="" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="splide__slide__container">
+              <Image src={Image2} alt="" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="splide__slide__container">
+              <Image src={Image3} alt="" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="splide__slide__container">
+              <Image src={Image4} alt="" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="splide__slide__container">
+              <Image src={Image5} alt="" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="splide__slide__container">
+              <Image src={Image6} alt="" />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <h1 style="text-align: center;">{pageTitle}</h1>
+      <slot />
+    </div>
+    <Footer />
+    <script>
+      import "../scripts/menu.js";
+    </script>
+    <script>
+      import "@splidejs/splide/css";
+      import Splide from "@splidejs/splide";
+
+      new Splide(".splide", {
+        type: "loop",
+        speed: 800,
+        autoplay: true,
+        interval: 5000,
+        // pauseOnHover: true,
+        width: "100vw",
+        height: "500px",
+        cover: true,
+        gap: "20vw",
+        focus: "center",
+      }).mount();
+    </script>
+  </body>
+</html>
+<style>
+  .splide {
+    /* z-index: -1; */
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    /* height: 100%; */
+    /* object-fit: cover; */
+  }
+  .splide__slide::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+  }
+  .container {
+    margin-top: 450px;
+  }
+</style>

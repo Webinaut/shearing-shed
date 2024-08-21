@@ -1,0 +1,53 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ContactForm from "../components/ContactForm.astro";
+import Phone from "../components/QuillPhone.astro";
+
+const pageTitle = "Contact Us";
+---
+
+<Layout pageTitle={pageTitle}>
+  <p>
+    We would love to hear from you. Just complete the form below and we shall
+    get back to you as soon as we can.
+  </p>
+  <article class="grid">
+    <div>
+      <h3>Contact Form</h3>
+      <ContactForm />
+    </div>
+    <div>
+      <h3>Facebook</h3>
+      <iframe
+        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.mansfieldshearingshedbarbershop.com.au&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1186019991435556"
+        width="340"
+        height="500"
+        style="border:none;overflow:hidden"
+        scrolling="no"
+        frameborder="0"
+        allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+      ></iframe>
+    </div>
+  </article>
+  <article>
+    <h2>Contact Details</h2>
+    <p>If you prefer not to use online forms, you can contact us by phone.</p>
+    <h3>Location</h3>
+    <p>
+      Shop 2,<br />
+      The Mall,<br />
+      14 High Street,<br />
+      Mansfield, VIC 3722
+    </p>
+    <h3>Phone</h3>
+    <Phone />
+    <a href="tel:0357752300">03 5775 2300</a>
+  </article>
+</Layout>
+<style>
+  h1,
+  article {
+    text-align: center;
+  }
+</style>

@@ -1,100 +1,81 @@
 ---
 import "../styles/global.scss";
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import FrontPageLayout from "../layouts/FrontPageLayout.astro";
+import { Image } from "astro:assets";
+import Image1 from "../images/Shaving-Neck.jpg";
+import Image2 from "../images/Wallabies-Signed-Jersey.jpg";
+import Image3 from "../images/Vintage-Tools.jpg";
+import ContactForm from "../components/ContactForm.astro";
+import Phone from "../components/QuillPhone.astro";
+import Footer from "../components/Footer.astro";
+const pageTitle = "Where Old World Barbering Meets A Modern Twist";
 ---
 
-<Layout title="Shearing Shed">
-  <main>
-    <h1>Shearing Shed</h1>
-    <p class="instructions">
-      To get started, open the directory <code>src/pages</code> in your project.<br
-      />
-      <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-    </p>
-    <ul role="list" class="link-card-grid">
-      <Card
-        href="https://docs.astro.build/"
-        title="Documentation"
-        body="Learn how Astro works and explore the official API docs."
-      />
-      <Card
-        href="https://astro.build/integrations/"
-        title="Integrations"
-        body="Supercharge your project with new frameworks and libraries."
-      />
-      <Card
-        href="https://astro.build/themes/"
-        title="Themes"
-        body="Explore a galaxy of community-built starter themes."
-      />
-      <Card
-        href="https://astro.build/chat/"
-        title="Community"
-        body="Come say hi to our amazing Discord community. ❤️"
-      />
-    </ul>
-  </main>
-</Layout>
-
+<FrontPageLayout pageTitle={pageTitle}>
+  <div class="main">
+    <article>
+      <p>
+        With over 60 years combined experience, The Shearing Shed is a place to
+        meet old friends, make new ones and share stories and laughter.
+      </p>
+      <p>
+        Our mission is to make you leave with a smile on your face and looking
+        sharp.
+      </p>
+      <p>
+        Having been cutting hair since before it was cool (a very long time), we
+        have carved a unique path in barbering.
+      </p>
+      <p>
+        With our noteable level of experience, you’re sure to get a great
+        haircut at a good price.
+      </p>
+      <p>
+        And, you could even get to hear one of the bad jokes Tony’s famous for!
+      </p>
+      <p>
+        Call us on:<br />
+        <Phone />
+        <a href="tel:0357752300">03 5775 2300</a>
+      </p>
+    </article>
+  </div>
+  <p>
+    We would love to hear from you. Just complete the form below and we shall
+    get back to you as soon as we can.
+  </p>
+  <article class="grid">
+    <div>
+      <ContactForm />
+    </div>
+    <div class="facebook">
+      <h3>Facebook</h3>
+      <iframe
+        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.mansfieldshearingshedbarbershop.com.au&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1186019991435556"
+        width="340"
+        height="500"
+        style="border:none;overflow:hidden"
+        scrolling="no"
+        frameborder="0"
+        allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+      ></iframe>
+    </div>
+  </article>
+  <article class="map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3184.178324052614!2d146.08923827249598!3d-37.05323345943734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b27c915175a4a95%3A0x2883a9092ecc6994!2sThe%20Mansfield%20Shearing%20Shed%20-%20Barber%20shop!5e0!3m2!1sen!2sau!4v1723681789196!5m2!1sen!2sau"
+      width="600"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </article>
+</FrontPageLayout>
 <style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  }
-  .astro-a {
-    position: absolute;
-    top: -32px;
-    left: 50%;
-    transform: translatex(-50%);
-    width: 220px;
-    height: auto;
-    z-index: -1;
-  }
-  h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
+  .map,
+  .facebook {
     text-align: center;
-    margin-bottom: 1em;
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-  .instructions {
-    margin-bottom: 2rem;
-    border: 1px solid rgba(var(--accent-light), 25%);
-    background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-dark), 33%)
-    );
-    padding: 1.5rem;
-    border-radius: 8px;
-  }
-  .instructions code {
-    font-size: 0.8em;
-    font-weight: bold;
-    background: rgba(var(--accent-light), 12%);
-    color: rgb(var(--accent-light));
-    border-radius: 4px;
-    padding: 0.3em 0.4em;
-  }
-  .instructions strong {
-    color: rgb(var(--accent-light));
-  }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 2rem;
-    padding: 0;
   }
 </style>
