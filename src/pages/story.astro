@@ -1,8 +1,38 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const pageTitle = "About";
+import { Image } from "astro:assets";
+import Historic from "../images/Historic.jpg";
+import HistoricArticle from "../images/Historic-Article.jpg";
+
+const pageTitle = "Story";
 ---
 
 <Layout pageTitle={pageTitle}>
-  <article>Test</article>
+  <article class="grid">
+    <div>
+      <p>
+        As classic cuts from bygone eras enjoy a surge in popularity, this
+        Father and daughter team have worked together for over 15 years.
+      </p>
+      <p>
+        Purchasing the business in 1979 from Bill Hogarth, Tony left behind the
+        bustling city of Melbourne’s barbering scene, opting for a tree change.
+      </p>
+      <p>
+        Tony’s daughter, Jodie, undertook and completed her apprenticeship the
+        early 90’s at the Shearing Shed before embarking on the lifetime dream
+        of travelling and working overseas. Some 15 years later, after working
+        in the UK and France, Jodie returned to Mansfield and took up the role
+        of Managing Director at the Shearing Shed. Tony was appointed Chairman
+        of the Board.
+      </p>
+    </div>
+    <div>
+      <Image src={Historic} alt="Historic" />
+    </div>
+  </article>
+  <h2 style="text-align:center">Bill Hogarth's Story</h2>
+  <article style="text-align: center;">
+    <Image src={HistoricArticle} alt="Historic Article" />
+  </article>
 </Layout>

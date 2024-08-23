@@ -14,7 +14,6 @@
     "@picocss/pico": "^2.0.6",
     "@splidejs/splide": "^4.1.4",
     "astro": "^4.14.2",
-    "astro-bootstrap": "^0.7.0",
     "sass": "^1.77.6"
   }
 }

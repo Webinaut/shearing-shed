@@ -1,8 +1,25 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const pageTitle = "About";
+import { Image } from "astro:assets";
+import ServicesPic from "../images/Shaving-Neck.jpg";
+const pageTitle = "Services";
 ---
 
 <Layout pageTitle={pageTitle}>
-  <article>Test</article>
+  <article>
+    <Image src={ServicesPic} alt="Services" />
+  </article>
+  <article>
+    <p>
+      Our services cover the complete range you would expect from a barber shop.
+    </p>
+    <p>
+      These include:
+      <ul>
+        <li>Men’s cut and blow wave</li>
+        <li>Buzz Cut Beard trim</li>
+        <li>Kid’s Cut</li>
+      </ul>
+    </p>
+  </article>
 </Layout>

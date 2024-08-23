@@ -4,7 +4,7 @@ import FrontPageHeader from "../components/FrontPageHeader.astro";
 import { Image } from "astro:assets";
 import Image1 from "../images/Shaving-Neck.jpg";
 import Image2 from "../images/Wallabies-Signed-Jersey.jpg";
-import Image3 from "../images/Vintage-Tools.jpg";
+// import Image3 from "../images/Vintage-Tools.jpg";
 ---
 
 <!doctype html>

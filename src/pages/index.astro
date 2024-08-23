@@ -1,10 +1,10 @@
 ---
 import "../styles/global.scss";
 import FrontPageLayout from "../layouts/FrontPageLayout.astro";
-import { Image } from "astro:assets";
-import Image1 from "../images/Shaving-Neck.jpg";
-import Image2 from "../images/Wallabies-Signed-Jersey.jpg";
-import Image3 from "../images/Vintage-Tools.jpg";
+// import { Image } from "astro:assets";
+// import Image1 from "../images/Shaving-Neck.jpg";
+// import Image2 from "../images/Wallabies-Signed-Jersey.jpg";
+// import Image3 from "../images/Tools.jpg";
 import ContactForm from "../components/ContactForm.astro";
 import Phone from "../components/QuillPhone.astro";
 import Footer from "../components/Footer.astro";
@@ -62,20 +62,31 @@ const pageTitle = "Where Old World Barbering Meets A Modern Twist";
       ></iframe>
     </div>
   </article>
+  <h2 style="text-align: center">Location</h2>
   <article class="map">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3184.178324052614!2d146.08923827249598!3d-37.05323345943734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b27c915175a4a95%3A0x2883a9092ecc6994!2sThe%20Mansfield%20Shearing%20Shed%20-%20Barber%20shop!5e0!3m2!1sen!2sau!4v1723681789196!5m2!1sen!2sau"
-      width="600"
-      height="450"
-      style="border:0;"
       allowfullscreen=""
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"></iframe>
   </article>
 </FrontPageLayout>
 <style>
-  .map,
   .facebook {
     text-align: center;
+  }
+  .map {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+  }
+  .map iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: 0;
   }
 </style>
