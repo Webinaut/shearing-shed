@@ -3,12 +3,11 @@ import "../styles/global.scss";
 // import "../styles/app.scss";
 import FrontPageHeader from "../components/FrontPageHeader.astro";
 import { Image } from "astro:assets";
-import Image1 from "../images/Shaving-Neck.jpg";
-import Image2 from "../images/Wallabies-Signed-Jersey.jpg";
-import Image3 from "../images/gallery/Vintage-Tools.jpg";
-import Image4 from "../images/Tools.jpg";
-import Image5 from "../images/Chair.jpg";
-import Image6 from "../images/gallery/Chairs-Rugby.jpg";
+const FrontPagePhotos = await Astro.glob("../images/front-page/*.jpg").then(
+  (files) => {
+    return files.map((file) => file.default);
+  }
+);
 import Footer from "../components/Footer.astro";
 const { pageTitle } = Astro.props;
 ---
@@ -47,36 +46,15 @@ const { pageTitle } = Astro.props;
     <div class="splide" aria-label="Splide Basic HTML Example">
       <div class="splide__track">
         <ul class="splide__list">
-          <li class="splide__slide">
-            <div class="splide__slide__container">
-              <Image src={Image1} alt="" />
-            </div>
-          </li>
-          <li class="splide__slide">
-            <div class="splide__slide__container">
-              <Image src={Image2} alt="" />
-            </div>
-          </li>
-          <li class="splide__slide">
-            <div class="splide__slide__container">
-              <Image src={Image3} alt="" />
-            </div>
-          </li>
-          <li class="splide__slide">
-            <div class="splide__slide__container">
-              <Image src={Image4} alt="" />
-            </div>
-          </li>
-          <li class="splide__slide">
-            <div class="splide__slide__container">
-              <Image src={Image5} alt="" />
-            </div>
-          </li>
-          <li class="splide__slide">
-            <div class="splide__slide__container">
-              <Image src={Image6} alt="" />
-            </div>
-          </li>
+          {
+            FrontPagePhotos.map((FrontPagePhoto) => (
+              <li class="splide__slide">
+                <div class="splide__slide__container">
+                  <Image src={FrontPagePhoto} alt="" loading="lazy" />
+                </div>
+              </li>
+            ))
+          }
         </ul>
       </div>
     </div>
