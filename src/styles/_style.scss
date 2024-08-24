@@ -83,13 +83,15 @@ a[role="button"] {
       5.8px 11.6px 17.1px -1.2px hsl(var(--shadow-color) / 0.18);
   }
 }
+// Splide Pagination Styles
 button[role="tab"] {
   padding: 0 1em;
   background-color: var(--pico-color);
   border-radius: 10%;
+  border: none;
   margin: 0 1em;
   &.is-active {
-    background-color: var(--pico-primary);
+    background-color: var(--pico-primary-hover-background);
   }
 }
 // Astro Styles
