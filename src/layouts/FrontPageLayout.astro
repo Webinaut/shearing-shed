@@ -9,6 +9,7 @@ const FrontPagePhotos = await Astro.glob("../images/front-page/*.jpg").then(
   }
 );
 import Footer from "../components/Footer.astro";
+import ViewTransitions from "astro/components/ViewTransitions.astro";
 const { pageTitle } = Astro.props;
 ---
 
@@ -25,7 +26,7 @@ const { pageTitle } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet" 
     /> -->
-
+    <ViewTransitions />
     <title>{pageTitle}</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y2E3V971GN"
