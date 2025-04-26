@@ -83,17 +83,6 @@ a[role="button"] {
       5.8px 11.6px 17.1px -1.2px hsl(var(--shadow-color) / 0.18);
   }
 }
-// Splide Pagination Styles
-button[role="tab"] {
-  padding: 0 1em;
-  background-color: var(--pico-color);
-  border-radius: 10%;
-  border: none;
-  margin: 0 1em;
-  &.is-active {
-    background-color: var(--pico-primary-hover-background);
-  }
-}
 // Astro Styles
 .container-fluid {
   display: flex;
@@ -115,21 +104,13 @@ button[role="tab"] {
     font-size: 1.2em;
   }
 }
-// .logo2 {
-//   display: flex;
-//   justify-content: flex-end;
-// }
+
 .logo2 img {
   max-height: 90px;
   object-fit: contain;
   width: auto;
   padding: 0.8em 1em;
 }
-// nav li,
-// .drop-icon {
-//   margin: 0;
-//   padding: 0;
-// }
 
 .main-nav li label.drop-icon:hover,
 .main-nav li a:hover {
@@ -146,10 +127,6 @@ button[role="tab"] {
   border-radius: var(--pico-border-radius);
 }
 
-/* Checkbox */
-// .main-nav input[type="checkbox"] {
-//   display: none;
-// }
 .logo .active {
   border-bottom: none;
 }
@@ -165,13 +142,6 @@ button[role="tab"] {
     justify-content: flex-end;
   }
 
-  // .main-nav li:has(label:hover) .sub-menu.martin,
-  // .sub-menu.martin:hover,
-  // .main-nav li:has(label:hover) .sub-menu.dev,
-  // .sub-menu.dev:hover {
-  //   display: block;
-  // }
-
   .main-nav .sub-menu.martin li a:hover,
   .main-nav .sub-menu.dev li a:hover {
     color: var(--pico-primary-hover);
@@ -185,8 +155,6 @@ button[role="tab"] {
 @media only screen and (max-width: 768px) {
   .logo {
     display: none;
-    // display: flex;
-    // justify-content: flex-end;
   }
   .logo2 {
     display: flex;

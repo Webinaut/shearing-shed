@@ -1,51 +1,13 @@
 ---
 import Layout from "../layouts/GalleryLayout.astro";
-import { Image } from "astro:assets";
-const galleryPhotos = await Astro.glob("../images/gallery/*.jpg").then(
-  (files) => {
-    return files.map((file) => file.default);
-  }
-);
+import PhotoGallery from "../components/Gallery.astro";
 const pageTitle = "Gallery";
 ---
 
 <Layout pageTitle={pageTitle}>
-  <div class="splide" aria-label="Splide Basic HTML Example">
-    <div class="splide__track">
-      <ul class="splide__list">
-        {
-          galleryPhotos.map((galleryPhoto) => (
-            <li class="splide__slide">
-              <div class="splide__slide__container">
-                <Image src={galleryPhoto} alt="" loading="lazy" />
-              </div>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
+  <div class="container">
+    <PhotoGallery />
   </div>
 </Layout>
 
-<script>
-  import "@splidejs/splide/css";
-  import Splide from "@splidejs/splide";
 
-  new Splide(".splide", {
-    type: "loop",
-    perPage: 2,
-    perMove: 1,
-    arrows: false,
-    speed: 800,
-    autoplay: true,
-    interval: 4000,
-    pauseOnHover: false,
-    width: "100%",
-    height: "500px",
-    focus: "center",
-    gap: "8px",
-    padding: 0,
-  }).mount();
-</script>
-
-<style></style>
