@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { imageMetadata } from 'astro/assets/utils';
+import { imageMetadata } from "astro/assets/utils";
 // import Swiper and modules styles
 import "swiper/scss";
 import "swiper/scss/pagination";
@@ -36,53 +36,56 @@ const pageTitle = "Gallery";
 ---
 
 <div class="swiper">
-      <div class="swiper-wrapper">
-          {
-            imageList.map((image, index) => (
-                          <div class="swiper-slide">
-              <Image src={image.src} alt={image.alt} loading="lazy" />
-          </div>
-          ))
-        }
-      </div>
-            <!-- If we need pagination -->
-      <div class="swiper-pagination"></div>
-    </div>
-<script>
-      // core version + navigation, pagination modules:
-      import Swiper from "swiper";
-      import { Autoplay, Pagination,  EffectFlip } from "swiper/modules";
+  <div class="swiper-wrapper">
+    {
+      imageList.map((image, index) => (
+        <div class="swiper-slide">
+          <Image src={image.src} alt={image.alt} loading="lazy" />
+        </div>
+      ))
+    }
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
 
-      // init Swiper:
-      const swiper = new Swiper(".swiper", {
-        // configure Swiper to use modules
-        modules: [Autoplay, Pagination,  EffectFlip],
+  <script>
+    // core version + navigation, pagination modules:
+    import Swiper from "swiper";
+    import { Autoplay, Pagination, EffectFlip } from "swiper/modules";
 
-        loop: true,
-        slidesPerView: 1,
-        speed: 1000,
-        effect: "flip",
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
+    // init Swiper:
+    const swiper = new Swiper(".swiper", {
+      // configure Swiper to use modules
+      modules: [Autoplay, Pagination, EffectFlip],
 
-        // If we need pagination
-        pagination: {
-          el: ".swiper-pagination",
-          type: "bullets",
-        },
-      });
-    </script>
-    <style lang="scss">
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 72vh;
-    object-fit: contain;
-  }
-    </style>
+      loop: true,
+      slidesPerView: 1,
+      speed: 1000,
+      effect: "flip",
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
 
-
-
-
+      // If we need pagination
+      pagination: {
+        el: ".swiper-pagination",
+        type: "bullets",
+      },
+    });
+  </script>
+  <style lang="scss">
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & img {
+        display: block;
+        width: auto;
+        height: 72vh;
+        object-fit: contain;
+        border-radius: 10px;
+      }
+    }
+  </style>
+</div>
