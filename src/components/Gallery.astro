@@ -8,8 +8,8 @@ import "swiper/scss/autoplay";
 import "swiper/scss/effect-flip";
 import "../styles/my-swiper-styles.scss";
 interface Props {
-  src: ImageMetadata;
-  alt: string;
+  src?: ImageMetadata;
+  alt?: string;
 }
 // Use import.meta.glob to get all images from the photo directory
 const images: { [key: string]: { default: ImageMetadata } } = import.meta.glob(
