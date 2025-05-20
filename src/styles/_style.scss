@@ -210,7 +210,7 @@ a[role="button"] {
     display: none;
   }
   .main-nav.expanded {
-    z-index: 1;
+    z-index: 999;
     background: var(--pico-primary-inverse);
     padding: 0.5em;
     border: solid var(--pico-primary);
