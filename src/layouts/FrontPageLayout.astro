@@ -2,7 +2,7 @@
 import "../styles/global.scss";
 import FrontPageHeader from "../components/FrontPageHeader.astro";
 import { Image } from "astro:assets";
-import { imageMetadata } from 'astro/assets/utils';
+import { imageMetadata } from "astro/assets/utils";
 // import Swiper and modules styles
 import "swiper/scss";
 import "swiper/scss/pagination";
@@ -11,31 +11,13 @@ import "swiper/scss/effect-fade";
 import "../styles/my-swiper-styles.scss";
 // import FPImage from "./FPImage.astro";
 import Footer from "../components/Footer.astro";
-interface Props {
-  src: ImageMetadata;
-  alt: string;
-}
-// Use import.meta.glob to get all images from the photo directory
-const images: { [key: string]: { default: ImageMetadata } } = import.meta.glob(
-  "../images/front-page/*.{jpeg,jpg,png,gif,webp}",
-  { eager: true }
+const FrontPagePhotos = import.meta.glob<{ default: ImageMetadata }>(
+  "../images/front-page/*.{jpeg,jpg,png,webp}",
 );
-// Create an array of image information
-const imageList = Object.entries(images).map(([path, image]) => {
-  // Extract filename from path to use as default title
-  const fileName = path.split("/").pop()?.split(".")[0] || "";
-  const title = fileName
-    .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
-
-  return {
-    path,
-    alt: title,
-    src: image.default,
-  };
-});
-
+const HeroPhotos = Object.values(FrontPagePhotos);
+interface Props {
+  pageTitle: string;
+}
 const { pageTitle } = Astro.props;
 ---
 
@@ -65,15 +47,15 @@ const { pageTitle } = Astro.props;
     <FrontPageHeader />
     <div class="swiper">
       <div class="swiper-wrapper">
-          {
-            imageList.map((image, index) => (
-                          <div class="swiper-slide">
-              <Image src={image.src} alt={image.alt} loading="lazy" />
-          </div>
+        {
+          HeroPhotos.map((image) => (
+            <div class="swiper-slide">
+              <Image src={image()} alt="" loading="lazy" />
+            </div>
           ))
         }
       </div>
-            <!-- If we need pagination -->
+      <!-- If we need pagination -->
       <div class="swiper-pagination"></div>
     </div>
     <div class="container">
@@ -118,7 +100,7 @@ const { pageTitle } = Astro.props;
   </body>
 </html>
 <style lang="scss">
- .swiper {
+  .swiper {
     position: absolute;
     top: 0;
     left: 0;
