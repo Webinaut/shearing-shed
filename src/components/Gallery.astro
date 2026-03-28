@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { imageMetadata } from "astro/assets/utils";
+// import { imageMetadata } from "astro/assets/utils";
 // import Swiper and modules styles
 import "swiper/scss";
 import "swiper/scss/pagination";
@@ -14,7 +14,7 @@ interface Props {
 // Use import.meta.glob to get all images from the photo directory
 const images: { [key: string]: { default: ImageMetadata } } = import.meta.glob(
   "../images/gallery/*.{jpeg,jpg,png,gif,webp}",
-  { eager: true }
+  { eager: true },
 );
 // Create an array of image information
 const imageList = Object.entries(images).map(([path, image]) => {

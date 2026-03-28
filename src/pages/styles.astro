@@ -1,11 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-const stylePhotos = await Astro.glob("../images/hair-styles/*.jpg").then(
-  (files) => {
-    return files.map((file) => file.default);
-  }
+// const stylePhotos = await Astro.glob("../images/hair-styles/*.jpg").then(
+//   (files) => {
+//     return files.map((file) => file.default);
+//   },
+// );
+const StylePagePhotos = import.meta.glob<{ default: ImageMetadata }>(
+  "../images/hair-styles/*.{jpeg,jpg,png,webp}",
 );
+const StylePhotos = Object.values(StylePagePhotos);
 const pageTitle = "Styles";
 ---
 
@@ -16,9 +20,9 @@ const pageTitle = "Styles";
     </p>
     <div class="grid">
       {
-        stylePhotos.map((stylePhoto) => (
+        StylePhotos.map((photo) => (
           <div>
-            <Image src={stylePhoto} alt="" loading="lazy" />
+            <Image src={photo()} alt="" loading="lazy" />
           </div>
         ))
       }
